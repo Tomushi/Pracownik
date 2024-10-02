@@ -40,7 +40,16 @@ namespace Pracownik
             }
 
             Console.WriteLine("Podaj PESEL pracownika");
-            
+            long pesel = long.Parse(Console.ReadLine());
+                       
+            Console.WriteLine("Podaj numer pracownika");
+            string input = Console.ReadLine();
+            long number;
+            while (!long.TryParse(input, out number))
+            {
+                Console.WriteLine("Podano nieprawidłowy numer. Spróbuj ponownie:");
+                input = Console.ReadLine();
+            }
         }
     }
 }
